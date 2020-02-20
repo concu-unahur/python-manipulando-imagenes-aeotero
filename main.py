@@ -5,7 +5,7 @@ import archivos
 
 logging.basicConfig(format='%(asctime)s.%(msecs)03d [%(threadName)s] - %(message)s', datefmt='%H:%M:%S', level=logging.INFO)
 
-#api.listaDeImagenes()
+#api.listaDeImagenes() esta es la lista con el nombre de imagenes para concatennar o hacer cositas
 #carpeta_imagenes = './imagenes'
 carpeta_imagenes = '/home/concurrente/Documentos/AEOtero/python-manipulando-imagenes-aeotero/imagenes'
 query = 'vehiculo militar'
@@ -22,6 +22,9 @@ for u in urls:
   logging.info(f'Descargando {u}')
   api.descargar_imagen(u)
 
+
+#arrancar desde 0 este quilombo
+#en este quilombo se quería recorrer la lista haciendo concatenaciones simultaneas.
 for u in range (0,6,6): #"""len(api.listaDeImagenes)"""
   imagen1 = archivos.leer_imagen(api.listaDeImagenes[u])
   imagen2 = archivos.leer_imagen(api.listaDeImagenes[u+1])
